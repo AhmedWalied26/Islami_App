@@ -61,7 +61,11 @@ class IntroItem extends StatelessWidget {
         next: Text('Next', style: bulidTextStyle(TextStyleModel())),
         back: Text('Back', style: bulidTextStyle(TextStyleModel())),
         onDone: () {
-          Navigator.pushNamed(context, HomeView.routePath);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            HomeView.routePath,
+            (route) => false,
+          );
         },
         done: Text('Done', style: bulidTextStyle(TextStyleModel())),
         pages: introData.map((data) => buildPageViewItem(data)).toList(),
