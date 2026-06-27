@@ -20,11 +20,11 @@ class _HomeViewState extends State<HomeView> {
   int currentIndex = 0;
 
   final List<AssetImage> backGroundImage = [
-    AssetImage('assets/images/quran_view.png'),
-    AssetImage('assets/images/hadith_view.png'),
-    AssetImage('assets/images/sebha_view.png'),
-    AssetImage('assets/images/radio_view.png'),
-    AssetImage('assets/images/time_view.png'),
+    AssetImage('assets/images/quran_bg_op.png'),
+    AssetImage('assets/images/hadith_bg_op.png'),
+    AssetImage('assets/images/sebha_bg_op.png'),
+    AssetImage('assets/images/radio_bg_op.png'),
+    AssetImage('assets/images/time_bg_op.png'),
   ];
 
   final taps = [
@@ -43,11 +43,10 @@ class _HomeViewState extends State<HomeView> {
           end: .bottomCenter,
           colors: [
             AppColors.backGroundColor,
-            AppColors.backGroundColor.withValues(alpha: 0.7),
+            AppColors.backGroundColor.withValues(alpha: 0.1),
           ],
         ),
         image: DecorationImage(
-          opacity: .1,
           fit: BoxFit.cover,
           image: backGroundImage[currentIndex],
         ),
