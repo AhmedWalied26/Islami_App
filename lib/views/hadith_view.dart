@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/widgets/body_hadith_view.dart';
 import 'package:islami_app/widgets/hadith_carousel_slider.dart';
 
 class HadithView extends StatelessWidget {

@@ -15,13 +15,11 @@ class IslamiApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Janna LT'),
-      // routes: {
-      //   '/': (context) => IntroView(),
-      //   'homeView': (context) => HomeView(),
-      //   'detailsView': (context) => DetailsView(),
-
-      // },
-      home: HomeView(),
+      routes: {
+        '/': (context) => IntroView(),
+        'homeView': (context) => HomeView(),
+        'detailsView': (context) => DetailsView(),
+      },
     );
   }
 }
