@@ -15,7 +15,6 @@ class IslamiApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Janna LT'),
-
       routes: {
         '/': (context) => IntroView(),
         'homeView': (context) => HomeView(),
