@@ -5,7 +5,16 @@ import 'package:islami_app/models/text_style_model.dart';
 import 'package:islami_app/shared/widgets/body_details_view.dart';
 
 class DetailsView extends StatelessWidget {
-  const DetailsView({super.key});
+  final String englishSura;
+  final String arabicSura;
+  final String suraNumber;
+
+  const DetailsView({
+    super.key,
+    required this.englishSura,
+    required this.arabicSura,
+    required this.suraNumber,
+  });
 
   static const routePath = 'detailsView';
 
@@ -17,12 +26,16 @@ class DetailsView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
-          'Al-Fatiha',
+          englishSura,
           style: bulidTextStyle(TextStyleModel(fontSize: 20)),
         ),
       ),
       backgroundColor: AppColors.backGroundColor,
-      body: BodyDetailsView(),
+      body: BodyDetailsView(
+        arabicSura: arabicSura,
+        englishSura: englishSura,
+        suraNumber: suraNumber,
+      ),
       bottomNavigationBar: Image.asset('assets/images/details_bottom.png'),
     );
   }
