@@ -33,8 +33,7 @@ class RecentListView extends StatelessWidget {
             scrollDirection: .horizontal,
             separatorBuilder: (context, index) => SizedBox(width: 10),
             itemCount: MostRecent.recent.value.length,
-            itemBuilder: (context, index) =>
-                RecentItem(model: MostRecent.recent.value[index]),
+            itemBuilder: (context, index) => RecentItem(model: recent[index]),
           ),
         );
       },

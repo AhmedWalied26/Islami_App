@@ -3,7 +3,7 @@ import 'package:islami_app/features/home/views/home_view.dart';
 import 'package:islami_app/features/onboarding/views/intro_view.dart';
 
 void main() {
-  runApp(IslamiApp());
+  runApp(const IslamiApp());
 }
 
 class IslamiApp extends StatelessWidget {

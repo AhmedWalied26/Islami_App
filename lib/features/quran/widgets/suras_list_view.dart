@@ -21,6 +21,7 @@ class SurasListView extends StatelessWidget {
               arabic: AppStrings.arabicSuras[index],
               english: AppStrings.englishSurahs[index],
               number: AppStrings.numOfAya[index],
+              suraNumber: index + 1,
             ),
           );
         },

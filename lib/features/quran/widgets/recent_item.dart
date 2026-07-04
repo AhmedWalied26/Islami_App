@@ -3,6 +3,7 @@ import 'package:islami_app/core/app_colors.dart';
 import 'package:islami_app/core/text_style.dart';
 import 'package:islami_app/models/suras_model.dart';
 import 'package:islami_app/models/text_style_model.dart';
+import 'package:islami_app/shared/views/details_view.dart';
 
 class RecentItem extends StatelessWidget {
   const RecentItem({super.key, required this.model});
@@ -10,54 +11,70 @@ class RecentItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 305,
-      decoration: BoxDecoration(
-        color: AppColors.gold,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 17),
-            child: Expanded(
-              child: Column(
-                crossAxisAlignment: .start,
-                mainAxisAlignment: .spaceEvenly,
-                children: [
-                  Text(
-                    model.english,
-                    style: bulidTextStyle(
-                      TextStyleModel(
-                        fontSize: 24,
-                        color: AppColors.backGroundColor,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) {
+              return DetailsView(
+                englishSura: model.english,
+                arabicSura: model.arabic,
+                suraNumber: model.suraNumber.toString(),
+              );
+            },
+          ),
+        );
+      },
+      child: Container(
+        width: 300,
+        decoration: BoxDecoration(
+          color: AppColors.gold,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 17),
+              child: Expanded(
+                child: Column(
+                  crossAxisAlignment: .start,
+                  mainAxisAlignment: .spaceEvenly,
+                  children: [
+                    Text(
+                      model.english,
+                      style: bulidTextStyle(
+                        TextStyleModel(
+                          fontSize: 24,
+                          color: AppColors.backGroundColor,
+                        ),
                       ),
                     ),
-                  ),
-                  Text(
-                    model.arabic,
-                    style: bulidTextStyle(
-                      TextStyleModel(
-                        fontSize: 24,
-                        color: AppColors.backGroundColor,
+                    Text(
+                      model.arabic,
+                      style: bulidTextStyle(
+                        TextStyleModel(
+                          fontSize: 24,
+                          color: AppColors.backGroundColor,
+                        ),
                       ),
                     ),
-                  ),
-                  Text(
-                    model.number,
-                    style: bulidTextStyle(
-                      TextStyleModel(
-                        fontSize: 14,
-                        color: AppColors.backGroundColor,
+                    Text(
+                      '${model.number} Verses',
+                      style: bulidTextStyle(
+                        TextStyleModel(
+                          fontSize: 14,
+                          color: AppColors.backGroundColor,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          Expanded(child: Image.asset('assets/images/most_recent.png')),
-        ],
+            Expanded(child: Image.asset('assets/images/most_recent.png')),
+          ],
+        ),
       ),
     );
   }
