@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/views/details_view.dart';
-import 'package:islami_app/views/home_view.dart';
-import 'package:islami_app/views/intro_view.dart';
+import 'package:islami_app/features/home/views/home_view.dart';
+import 'package:islami_app/features/onboarding/views/intro_view.dart';
+import 'package:islami_app/shared/views/details_view.dart';
 
 void main() {
   runApp(IslamiApp());
