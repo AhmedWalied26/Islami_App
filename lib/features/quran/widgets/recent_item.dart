@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/core/app_colors.dart';
 import 'package:islami_app/core/text_style.dart';
+import 'package:islami_app/features/quran/widgets/quran_details_view.dart';
 import 'package:islami_app/models/suras_model.dart';
 import 'package:islami_app/models/text_style_model.dart';
 import 'package:islami_app/shared/views/details_view.dart';
@@ -18,9 +19,9 @@ class RecentItem extends StatelessWidget {
           MaterialPageRoute(
             builder: (_) {
               return DetailsView(
-                englishSura: model.english,
-                arabicSura: model.arabic,
-                suraNumber: model.suraNumber.toString(),
+                appBarTitle: model.english,
+                bodyTitle: model.arabic,
+                body: QuranDetailsView(suraNumber: model.suraNumber.toString()),
               );
             },
           ),

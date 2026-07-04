@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/core/app_colors.dart';
 import 'package:islami_app/core/text_style.dart';
+import 'package:islami_app/models/hadith_model.dart';
 import 'package:islami_app/models/text_style_model.dart';
 
 class BodyHadithView extends StatelessWidget {
-  const BodyHadithView({super.key});
+  const BodyHadithView({super.key, required this.model});
+  final HadithModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -17,36 +19,52 @@ class BodyHadithView extends StatelessWidget {
             color: AppColors.gold,
           ),
           child: Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 4),
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: .spaceBetween,
+                  mainAxisAlignment: .center,
                   children: [
-                    Image.asset(
-                      'assets/images/details_left_corner.png',
-                      color: AppColors.backGroundColor,
+                    Expanded(
+                      child: Image.asset(
+                        'assets/images/details_left_corner.png',
+                        color: AppColors.backGroundColor,
+                      ),
                     ),
-                    Text(
-                      'الحديث الأول',
-                      style: bulidTextStyle(
-                        TextStyleModel(
-                          fontSize: 24,
-                          color: AppColors.backGroundColor,
+                    Expanded(
+                      child: Text(
+                        textAlign: .center,
+                        model.title,
+                        style: bulidTextStyle(
+                          TextStyleModel(
+                            fontSize: 19,
+                            color: AppColors.backGroundColor,
+                          ),
                         ),
                       ),
                     ),
-                    Image.asset(
-                      'assets/images/details_right_corner.png',
-                      color: AppColors.backGroundColor,
+                    Expanded(
+                      child: Image.asset(
+                        'assets/images/details_right_corner.png',
+                        color: AppColors.backGroundColor,
+                      ),
                     ),
                   ],
                 ),
-                Text(
-                  textAlign: .center,
-                  'عن أمـيـر المؤمنـين أبي حـفص عمر بن الخطاب رضي الله عنه ، قال : سمعت رسول الله صلى الله عـليه وسلم يـقـول : ( إنـما الأعـمـال بالنيات وإنـمـا لكـل امـرئ ما نـوى . فمن كـانت هجرته إلى الله ورسولـه فهجرتـه إلى الله ورسـوله ومن كانت هجرته لـدنيا يصـيبها أو امرأة ينكحها فهجرته إلى ما هاجر إليه ). رواه إمام المحد ثين أبـو عـبـد الله محمد بن إسماعـيل بن ابراهـيـم بن المغـيره بن بـرد زبه البخاري الجعـفي،[رقم:1] وابـو الحسـيـن مسلم بن الحجاج بن مـسلم القـشـيري الـنيسـابـوري [رقم :1907] رضي الله عنهما في صحيحيهما اللذين هما أصح الكتب المصنفه',
-                  style: bulidTextStyle(
-                    TextStyleModel(color: AppColors.backGroundColor),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    maxLines: 16,
+                    overflow: TextOverflow.ellipsis,
+                    textDirection: TextDirection.rtl,
+                    textAlign: .center,
+                    model.content,
+                    style: TextStyle(
+                      fontWeight: .w700,
+                      fontSize: 16,
+                      color: AppColors.backGroundColor,
+                      height: 1.8,
+                    ),
                   ),
                 ),
               ],
