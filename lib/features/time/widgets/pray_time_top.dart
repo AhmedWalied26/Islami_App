@@ -10,7 +10,7 @@ class PrayTimeTop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: .spaceAround,
-      crossAxisAlignment: .start,
+      crossAxisAlignment: .end,
       children: [
         Text(
           '16 Jul,\n2024',

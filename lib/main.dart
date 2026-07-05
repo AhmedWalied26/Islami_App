@@ -17,7 +17,10 @@ class IslamiApp extends StatelessWidget {
         appBarTheme: AppBarTheme(scrolledUnderElevation: 0),
         fontFamily: 'Janna LT',
       ),
-      routes: {'': (context) => IntroView(), '/': (context) => HomeView()},
+      routes: {
+        '/': (context) => IntroView(),
+        'homeView': (context) => HomeView(),
+      },
     );
   }
 }

@@ -20,26 +20,22 @@ class IntroItem extends StatelessWidget {
       imagePath: 'assets/images/intro_image2.png',
       title: 'Welcome To Islami App',
       subTitle: 'We Are Very Excited To Have You In Our Community',
-      spacing: 35,
     ),
     OnboardingModel(
       imagePath: 'assets/images/intro_image3.png',
       title: 'Reading the Quran',
       subTitle: 'Read, and your Lord is the Most Generous',
-      spacing: 50,
     ),
     OnboardingModel(
       imagePath: 'assets/images/intro_image4.png',
       title: 'Bearish',
       subTitle: 'Praise the name of your Lord, the Most\nHigh',
-      spacing: 38,
     ),
     OnboardingModel(
       imagePath: 'assets/images/intro_image5.png',
       title: 'Holy Quran Radio',
       subTitle:
           'You can listen to the Holy Quran Radio through the application for free and easily',
-      spacing: 36,
     ),
   ];
 

@@ -8,9 +8,9 @@ class PrayTimeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Container(
-      width: 104,
-      height: 128,
+      width: width * 0.24,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(

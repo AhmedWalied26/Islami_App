@@ -9,28 +9,21 @@ class PrayTimeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          alignment: .topCenter,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(40),
-            color: AppColors.brown,
-          ),
-          child: Image.asset(
-            'assets/images/time_image.png',
-            width: .infinity,
-            fit: .cover,
-          ),
+    var height = MediaQuery.of(context).size.height;
+    return Container(
+      height: height * 0.30,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40),
+        color: AppColors.brown,
+        image: DecorationImage(
+          fit: .fill,
+          image: AssetImage('assets/images/time_image.png'),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 12),
-          child: Column(
-            spacing: 30,
-            children: [PrayTimeTop(), TimeCarouselSlider(), PrayTimeBottom()],
-          ),
-        ),
-      ],
+      ),
+      child: Column(
+        spacing: height * 0.028,
+        children: [PrayTimeTop(), TimeCarouselSlider(), PrayTimeBottom()],
+      ),
     );
   }
 }

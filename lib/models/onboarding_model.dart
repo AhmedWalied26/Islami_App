@@ -1,13 +1,13 @@
 class OnboardingModel {
-  String imagePath;
-  String title;
-  String? subTitle;
-  double spacing;
+  final String imagePath;
+  final String title;
+  final String? subTitle;
+  final double spacing;
 
   OnboardingModel({
     required this.imagePath,
     required this.title,
     this.subTitle,
-    required this.spacing,
+    this.spacing = 30,
   });
 }

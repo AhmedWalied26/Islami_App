@@ -6,19 +6,21 @@ import 'package:islami_app/models/text_style_model.dart';
 
 PageViewModel buildPageViewItem(OnboardingModel model) {
   return PageViewModel(
+    useScrollView: false,
     titleWidget: Column(
-      spacing: model.spacing,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(model.imagePath),
+        SizedBox(height: model.spacing),
         Text(model.title, style: bulidTextStyle(TextStyleModel(fontSize: 24))),
-        if (model.subTitle != null)
-          Text(
-            textAlign: .center,
-            model.subTitle!,
-            style: bulidTextStyle(TextStyleModel(fontSize: 20)),
-          ),
       ],
     ),
-    body: '',
+    bodyWidget: model.subTitle != null
+        ? Text(
+            model.subTitle!,
+            textAlign: TextAlign.center,
+            style: bulidTextStyle(TextStyleModel(fontSize: 20)),
+          )
+        : const SizedBox.shrink(),
   );
 }

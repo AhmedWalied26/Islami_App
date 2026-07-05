@@ -20,17 +20,21 @@ class RadioTabs extends StatelessWidget {
       ),
       child: Row(
         children: [
-          buildHoverButton(
-            selectedIndex: selextedIndex,
-            index: 0,
-            onTap: onTapSwicth,
-            title: 'Radio',
+          Expanded(
+            child: RadioHover(
+              selectedIndex: selextedIndex,
+              index: 0,
+              onTap: onTapSwicth,
+              title: 'Radio',
+            ),
           ),
-          buildHoverButton(
-            selectedIndex: selextedIndex,
-            index: 1,
-            onTap: onTapSwicth,
-            title: 'Reciters',
+          Expanded(
+            child: RadioHover(
+              selectedIndex: selextedIndex,
+              index: 1,
+              onTap: onTapSwicth,
+              title: 'Reciters',
+            ),
           ),
         ],
       ),

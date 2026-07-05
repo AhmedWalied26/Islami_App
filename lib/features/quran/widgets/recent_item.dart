@@ -37,40 +37,38 @@ class RecentItem extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 17),
-              child: Expanded(
-                child: Column(
-                  crossAxisAlignment: .start,
-                  mainAxisAlignment: .spaceEvenly,
-                  children: [
-                    Text(
-                      model.english,
-                      style: bulidTextStyle(
-                        TextStyleModel(
-                          fontSize: 24,
-                          color: AppColors.backGroundColor,
-                        ),
+              child: Column(
+                crossAxisAlignment: .start,
+                mainAxisAlignment: .spaceEvenly,
+                children: [
+                  Text(
+                    model.english,
+                    style: bulidTextStyle(
+                      TextStyleModel(
+                        fontSize: 24,
+                        color: AppColors.backGroundColor,
                       ),
                     ),
-                    Text(
-                      model.arabic,
-                      style: bulidTextStyle(
-                        TextStyleModel(
-                          fontSize: 24,
-                          color: AppColors.backGroundColor,
-                        ),
+                  ),
+                  Text(
+                    model.arabic,
+                    style: bulidTextStyle(
+                      TextStyleModel(
+                        fontSize: 24,
+                        color: AppColors.backGroundColor,
                       ),
                     ),
-                    Text(
-                      '${model.number} Verses',
-                      style: bulidTextStyle(
-                        TextStyleModel(
-                          fontSize: 14,
-                          color: AppColors.backGroundColor,
-                        ),
+                  ),
+                  Text(
+                    '${model.number} Verses',
+                    style: bulidTextStyle(
+                      TextStyleModel(
+                        fontSize: 14,
+                        color: AppColors.backGroundColor,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             Expanded(child: Image.asset('assets/images/most_recent.png')),

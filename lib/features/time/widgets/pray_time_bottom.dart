@@ -8,10 +8,11 @@ class PrayTimeBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(left: 112),
+      padding: EdgeInsets.only(left: width * 0.2),
       child: Row(
-        spacing: 73,
+        spacing: width * 0.2,
         mainAxisAlignment: .center,
         children: [
           Text(

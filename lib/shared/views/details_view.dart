@@ -19,6 +19,8 @@ class DetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: AppColors.gold),
@@ -32,7 +34,11 @@ class DetailsView extends StatelessWidget {
       backgroundColor: AppColors.backGroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(right: 18, left: 18, top: 16),
+          padding: EdgeInsets.only(
+            right: width * 0.04,
+            left: width * 0.04,
+            top: height * 0.02,
+          ),
           child: Column(
             children: [
               Row(
@@ -40,14 +46,19 @@ class DetailsView extends StatelessWidget {
                 crossAxisAlignment: .start,
                 children: [
                   Image.asset('assets/images/details_left_corner.png'),
-                  Text(
-                    bodyTitle,
-                    style: bulidTextStyle(TextStyleModel(fontSize: 24)),
+                  Expanded(
+                    child: Text(
+                      textAlign: .center,
+                      softWrap: true,
+                      maxLines: 2,
+                      bodyTitle,
+                      style: TextStyle(fontSize: 24, color: AppColors.gold),
+                    ),
                   ),
                   Image.asset('assets/images/details_right_corner.png'),
                 ],
               ),
-              body,
+              Padding(padding: EdgeInsets.all(width * 0.04), child: body),
             ],
           ),
         ),
