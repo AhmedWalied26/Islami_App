@@ -17,7 +17,6 @@ class HadithCarouselSlider extends StatelessWidget {
         viewportFraction: 0.78,
         enlargeCenterPage: true,
         enlargeFactor: 0.15,
-        enableInfiniteScroll: false,
       ),
       itemCount: hadiths.length,
       itemBuilder: (_, index, realIndex) {
