@@ -10,7 +10,6 @@ class TimeCarouselSlider extends StatelessWidget {
     return CarouselSlider.builder(
       options: CarouselOptions(
         height: MediaQuery.sizeOf(context).height * 0.13,
-        enableInfiniteScroll: false,
         enlargeCenterPage: true,
         viewportFraction: .28,
         enlargeFactor: .20,

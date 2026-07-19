@@ -7,13 +7,12 @@ class TimeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: .start,
-      spacing: 20,
-      children: [
-        PrayTimeItem(),
-        Expanded(child: AzkarItem()),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: .start,
+        spacing: 20,
+        children: [PrayTimeItem(), AzkarItem()],
+      ),
     );
   }
 }
